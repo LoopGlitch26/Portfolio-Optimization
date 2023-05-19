@@ -71,6 +71,7 @@ class Agent:
             self.iterations +=1
         plt.plot(x,y)
         plt.show()
+        plt.savefig()
         f = open('resultlog.txt','w')
         f.writelines(logs)
         f.close()
