@@ -144,6 +144,16 @@ plt.xlabel('Days')
 plt.legend(loc='upper right')
 plt.show()
 
+# Plot GAN Loss
+plt.figure(figsize=(12, 8))
+plt.plot(gan.discriminator_loss, label='D_Loss')
+plt.plot(gan.generator_loss, label='G_Loss')
+plt.title('GAN Loss')
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.legend()
+plt.show()          
+          
 # Train WGAN-GP model
 class WGAN_GP:
     def __init__(self, generator, discriminator):
@@ -231,4 +241,13 @@ plt.xlabel('Days')
 plt.legend(loc='upper right')
 plt.show()
           
+# Plot WGAN-GP Loss
+plt.figure(figsize=(12, 8))
+plt.plot(wgan_gp.discriminator_loss, label='D_Loss')
+plt.plot(wgan_gp.generator_loss, label='G_Loss')
+plt.title('WGAN Loss')
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.legend()
+plt.show()
           
