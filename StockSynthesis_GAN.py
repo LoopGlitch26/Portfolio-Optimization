@@ -6,7 +6,7 @@ import tensorflow as tf
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.losses import mean_squared_error
-from tensorflow.keras.layers import GRU, Dense, Flatten, Conv1D, BatchNormalization, LeakyReLU
+from tensorflow.keras.layers import LSTM, Dense, Flatten, Conv1D, BatchNormalization, LeakyReLU
 from tensorflow.keras import Sequential
 from tensorflow.keras.models import save_model
 from pickle import load
@@ -31,15 +31,15 @@ y_test = scaled_test_data[:, -1]
 # Define the generator
 def make_generator_model(input_dim, output_dim, feature_size):
     model = Sequential()
-    model.add(GRU(units=256,
-                  return_sequences=True,
-                  input_shape=(input_dim, feature_size),
-                  recurrent_dropout=0.2))
-    model.add(GRU(units=128,
-                  return_sequences=True,
-                  recurrent_dropout=0.2))
-    model.add(GRU(units=64,
-                  recurrent_dropout=0.2))
+    model.add(LSTM(units=256,
+                   return_sequences=True,
+                   input_shape=(input_dim, feature_size),
+                   recurrent_dropout=0.2))
+    model.add(LSTM(units=128,
+                   return_sequences=True,
+                   recurrent_dropout=0.2))
+    model.add(LSTM(units=64,
+                   recurrent_dropout=0.2))
     model.add(Dense(units=output_dim))
     return model
 
@@ -138,7 +138,7 @@ synthetic_samples_gan = scaler.inverse_transform(synthetic_samples_gan)
 plt.figure(figsize=(12, 8))
 plt.plot(scaler.inverse_transform(X_train[:, -1]), color='blue', label='Actual Price')
 plt.plot(synthetic_samples_gan[:, -1], color='red', label='Synthetic Price')
-plt.title('f'{symbol} - Synthetic vs Actual Price')
+plt.title(f'{symbol} - Synthetic vs Actual Price')
 plt.ylabel('Price')
 plt.xlabel('Days')
 plt.legend(loc='upper right')
@@ -152,8 +152,8 @@ plt.title('GAN Loss')
 plt.xlabel('Epoch')
 plt.ylabel('Loss')
 plt.legend()
-plt.show()          
-          
+plt.show()
+
 # Train WGAN-GP model
 class WGAN_GP:
     def __init__(self, generator, discriminator):
@@ -235,19 +235,19 @@ synthetic_samples_wgan_gp = scaler.inverse_transform(synthetic_samples_wgan_gp)
 plt.figure(figsize=(12, 8))
 plt.plot(scaler.inverse_transform(X_train[:, -1]), color='blue', label='Actual Price')
 plt.plot(synthetic_samples_wgan_gp[:, -1], color='red', label='Synthetic Price')
-plt.title('f'{symbol} - Synthetic vs Actual Price')
+plt.title(f'{symbol} - Synthetic vs Actual Price')
 plt.ylabel('Price')
 plt.xlabel('Days')
 plt.legend(loc='upper right')
 plt.show()
-          
+
 # Plot WGAN-GP Loss
 plt.figure(figsize=(12, 8))
 plt.plot(wgan_gp.discriminator_loss, label='D_Loss')
 plt.plot(wgan_gp.generator_loss, label='G_Loss')
-plt.title('WGAN Loss')
+plt.title('WGAN-GP Loss')
 plt.xlabel('Epoch')
 plt.ylabel('Loss')
 plt.legend()
 plt.show()
-          
+
