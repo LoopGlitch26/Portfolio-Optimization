@@ -27,8 +27,6 @@ class StockEnv:
 
     def step(self, action):
         current_price = self.data.iloc[self.current_step]['Close']
-        # print(current_price)
-        #print(self.net_worth)
         prev_net_worth = self.net_worth
         if action == 0: # Buy
             if current_price <= self.balance:
@@ -42,7 +40,7 @@ class StockEnv:
                 self.net_worth = self.balance + self.stock_owned * current_price
         elif action == 2:
             self.net_worth = self.balance + self.stock_owned * current_price
-        print(self.balance,self.stock_owned,current_price)
+        print(self.balance,current_price)
 
         # Go to the next day
         self.current_step += 1
@@ -108,45 +106,39 @@ class ActorCritic:
         action = np.random.choice(self.action_size, p=probabilities)
         return action
 
-def train_model(env, actor_critic, episodes=100):
+def test_model(env, actor_critic, stock):
+    state = env.reset()
+    state = np.reshape(state, [1, env.state_size]).astype(np.float32)
+    done = False
+    total_reward = 0
+
     total_rewards = []
-    i = 0
-    for episode in range(episodes):
-        state = env.reset()
-        state = np.reshape(state, [1, env.state_size]).astype(np.float32)
-        done = False
-        total_reward = 0
-
-        while not done:
-            action = actor_critic.act(state)
-            next_state, reward, done = env.step(action)
-            next_state = np.reshape(next_state, [1, env.state_size]).astype(np.float32)
-            actor_critic.train(state, action, reward, next_state, done)
-            state = next_state
-            total_reward += reward
-
+    while not done:
+        action = actor_critic.act(state)
+        next_state, reward, done = env.step(action)
+        next_state = np.reshape(next_state, [1, env.state_size]).astype(np.float32)
+        state = next_state
+        total_reward += reward
         total_rewards.append(total_reward)
-        print(f"Episode : {episode}, Total Reward : {total_reward}")
-        actor_critic.actor.save(f"actor{i}.h5")
-        actor_critic.critic.save(f'critic{i}.h5')
-        i+=1
-
-    print(total_rewards)
+    current_price = env.data.iloc[100]['Close']
+    profit = env.balance + (env.stock_owned*current_price) - env.initial_balance
     plt.plot(total_rewards)
-    plt.title('Total Reward per Episode')
-    plt.xlabel('Episode')
-    plt.ylabel('Total Reward')
+    plt.title(f"{stock}\n Total Profit : {profit}")
+    plt.xlabel('days')
+    plt.ylabel('Total Rewards')
     plt.show()
 
+    return total_reward
 
-def main():
-    df = pd.read_csv('new_dataset.csv')
-    groups = list(set(df['Symbol']))
-    df.head()
-    grouped_df = df.groupby('Symbol')
-    #data = pd.read_csv('new_datset.csv')
-    data = grouped_df.get_group(groups[0])
-    data = data[['Open', 'High', 'Low', 'Close', 'SMA_20', 'SMA_50']]
+
+df = pd.read_csv('new_dataset.csv')
+groups = list(set(df['Symbol']))
+df.head()
+grouped_df = df.groupby('Symbol')
+#data = pd.read_csv('new_datset.csv')
+for i in range(5):
+    data = grouped_df.get_group(groups[i])
+    data = data[['Open', 'High', 'Low', 'Close']]
     scaler = MinMaxScaler()
     data = pd.DataFrame(scaler.fit_transform(data), columns=data.columns)
 
@@ -155,7 +147,8 @@ def main():
     action_size = 3 # Buy or Sell
 
     actor_critic = ActorCritic(state_size=state_size, action_size=action_size)
-    train_model(env=env, actor_critic=actor_critic)
-
-if __name__ == '__main__':
-    main()
+    actor_critic.actor = load_model('actor400.h5')
+    actor_critic.critic = load_model('critic400.h5')
+    total_reward = test_model(env=env, actor_critic=actor_critic, stock=groups[i])
+    current_price = env.data.iloc[100]['Close']
+    print(f'Total Reward: {total_reward}, Profit : {env.balance + env.stock_owned*current_price}')
