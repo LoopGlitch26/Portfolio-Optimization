@@ -75,11 +75,11 @@ Google:
 
 ### Result Analysis
 
-GAN Loss Plot
+GAN Loss Plot:
 
 ![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/057b0de1-ba74-4dc6-889b-cef571bb51d9)
 
-### Portfolio Rewards
+Portfolio Rewards:
 
 ![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/9de5e76b-1ba4-409a-8bbc-a87a43846384)
 
