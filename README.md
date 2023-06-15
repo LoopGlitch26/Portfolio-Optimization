@@ -1,6 +1,7 @@
-# Senior Design Project (B.Tech in CSE)
+# Revolutionizing Portfolio Management in the age of Generative AI
 
-## Revolutionizing Portfolio Management in the age of Generative AI
+## Senior Design Project (B.Tech in CSE)
+
 ### Introduction
 
 Traditional portfolio management has relied on human expertise and heuristics to select assets and optimize portfolios.
