@@ -9,7 +9,7 @@ The combination of **deep reinforcement learning (DRL)** and **generative advers
 The aim of the project is to revolutionize portfolio management in the age of Generative AI and demonstrate the potential of DRL and GANs to improve portfolio performance and manage risk. 
 This approach enables the creation of synthetic data that can be utilized to train an agent, resulting in improved investment  decision-making.
 
-![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/783569d9-0d14-4bd1-b42f-789f98719fcb)
+![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/60ebd501-a1c7-4ad8-8b14-a8925e3fe397)
 
 ### Problem Identification
 
@@ -23,66 +23,66 @@ To train a DRL model on the synthetic dataset to identify low-risk high-return i
 
 ### Model Diagram
 
-![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/5930e6e6-0538-49e3-87a8-65482d662994)
+![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/243b968e-33de-4036-8bfe-ff2d2585c0f8)
 
 ### Dataset Description
 
 The dataset contains the stock data of FAANG companies from 1st January 2015. It was sourced from a dataset available on [Kaggle](https://www.kaggle.com/datasets/kaushiksuresh147/faang-fbamazonapplenetflixgoogle-stocks?resource=download) and [Yahoo Finance](https://finance.yahoo.com/?guccounter=1) that contains daily stock market data for **Facebook, Amazon, Apple, Netflix, and Google**.
 
-![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/c42a6674-7f17-45d5-8174-0a3fc49f9362)
+![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/8aed0b75-6071-4a90-863c-9053c7f41f6e)
 
 Parameters used:
 * Basic Variables: Highest Price, Lowest Price, Opening Price, Closing Price, Volume
 * Technical Indicators: Simple Moving Average (SMA), Exponential Moving Average (EMA), Moving Average Convergence Divergence (MACD), Relative Strength Index (RSI), Average True Range (ATR), Bollinger Bands, Raw Stochastic Value (RSV) 
 
-![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/17092d23-31a1-4b1f-ab84-2173c6158a83)
+![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/8c7d64eb-0054-47b2-8441-95f828908ada)
 
 ### Flowchart
 
 Data Preprocessing:
 
-![Screenshot 2023-06-15 at 4 30 50 PM](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/0d894966-e62b-455c-b417-abf6d9603569)
+![Screenshot 2023-06-17 at 5 21 44 AM](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/6d6981a3-d71a-445a-ae7b-b80ed31164d2)
 
 GAN + DRL:
 
-![Screenshot 2023-06-15 at 4 36 22 PM](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/a42f8de3-9275-4ddd-8e0f-e20cde802f58)
+![Screenshot 2023-06-15 at 4 36 22 PM](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/17794f12-deca-49b0-a956-81f57e4defee)
 
 ### Portfolio Prediction
 
 Facebook: 
 
-![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/195f4b82-7f0d-4edc-9659-c0883f2898e6)
-![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/0b24a9be-31bb-4b1b-8826-819804d78067)
+![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/61d768c1-858b-4046-9100-6f7fd7566029)
+![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/c59716a2-df24-48f2-8d70-ce59d2640246)
 
 Amazon:
 
-![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/775a4fc0-273d-42b1-9054-695d63bacb97)
-![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/fe60c64f-55ad-43b5-af4f-a5d98f3d01e2)
+![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/aa4b3a69-76fd-4a29-9b07-3d59b61d58ed)
+![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/ca55ebc3-09bc-402b-b217-db7078454ccc)
 
 Apple: 
 
-![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/14190206-794d-444d-bdc1-9fe186a8d616)
-![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/aca235b3-30ff-4392-991a-80f6b845ed5f)
+![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/e86aa9df-6cd5-4e4d-aa9a-6160c5457ea3)
+![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/eb434d93-0061-4807-9a08-e67506e852a5)
 
 Netflix:
 
-![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/843f70f4-75ae-4789-944f-e89e480245c3)
-![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/3b9539af-b326-4d09-8beb-8765a595e9bb)
+![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/b65dbf75-7409-452e-8944-63739f641fed)
+![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/1b951907-b3dd-4305-9b16-c34fc00529af)
 
 Google: 
 
-![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/76a1137b-80a4-4f00-b514-f48b5e33ef84)
-![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/8b0e8236-8022-467a-9cdb-4686feead10c)
+![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/eb959868-fae0-4d1d-aa06-2468036c9fb8)
+![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/7fe94136-a8d9-4e35-bf58-c9c9e302dcdd)
 
 ### Result Analysis
 
 GAN Loss Plot:
 
-![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/057b0de1-ba74-4dc6-889b-cef571bb51d9)
+![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/e430cc78-20d1-469a-95f1-33b7f36da209)
 
 Portfolio Rewards:
 
-![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/9de5e76b-1ba4-409a-8bbc-a87a43846384)
+![image](https://github.com/LoopGlitch26/Portfolio-Optimization-using-Generative-AI/assets/53336715/9dcf1baa-4066-457d-b68a-e99f81c96320)
 
 ### Future Scope
 
