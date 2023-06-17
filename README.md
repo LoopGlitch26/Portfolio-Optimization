@@ -99,7 +99,8 @@ Portfolio Rewards:
 * Pratik Gupta
 * Aayush Kumar
 * Dr. Binayak Panda (Supervisor)
-
+  
+ITER, Siksha 'O' Anusandhan (Deemed to be) University
 
 
 
