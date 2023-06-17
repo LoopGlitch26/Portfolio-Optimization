@@ -16,8 +16,8 @@ Market conditions are constantly changing, making it difficult to adapt and opti
 
 ### Solution Approach
 
-To develop a GAN-based synthetic dataset by forecasting market conditions to simulate multiple investment scenarios and reduce the impact of real-time market fluctuations. 
-To train a DRL model on the synthetic dataset to identify low-risk high-return investment opportunities and optimize portfolio performance by continuously adapting to evolving market conditions.
+Develop a GAN-based synthetic dataset by forecasting market conditions to simulate multiple investment scenarios and reduce the impact of real-time market fluctuations. 
+Train a DRL model on the synthetic dataset to identify low-risk high-return investment opportunities and optimize portfolio performance by continuously adapting to evolving market conditions.
 
 ### Model Diagram
 
