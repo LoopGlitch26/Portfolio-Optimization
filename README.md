@@ -1,7 +1,5 @@
 # Revolutionizing Portfolio Management in the age of Generative AI
 
-## Senior Design Project (B.Tech in CSE)
-
 ### Introduction
 
 Traditional portfolio management has relied on human expertise and heuristics to select assets and optimize portfolios.
@@ -91,17 +89,6 @@ Portfolio Rewards:
 * Conduct additional comparative analysis of the DRL and GAN's combined model with other advanced existing systems, exploring its performance across different market conditions and asset classes.
 
 * Enhance the synthetic asset return generation capabilities of the proposed system by incorporating more sophisticated algorithms and techniques to provide even better insights for investment decisions.
-
-### Team Members
-
-* Bravish Ghosh (Team Lead)
-* Tariq Nasar
-* Pratik Gupta
-* Aayush Kumar
-* Dr. Binayak Panda (Supervisor)
-  
-ITER, Siksha 'O' Anusandhan (Deemed to be) University
-
 
 
 
